@@ -1,24 +1,16 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
-	import { counterStore } from '../store/store';
+	import { counter } from '../store/store';
 
 	export let data: string;
 	export let number: number;
-
-	let counter: number;
-
-	const unsubscribe = counterStore.subscribe((store) => {
-		counter = store.value;
-	});
-
-	onDestroy(unsubscribe);
 </script>
 
 <section>
 	<p>{data}</p>
 	<p>{number}</p>
 	<div class="counterDiv">
-		<p>Counter: {counter}</p>
+		<p>Counter: {$counter.value}</p>
 		<p>#No need Redux/Recoil/Zustand anymore!</p>
 	</div>
 </section>
