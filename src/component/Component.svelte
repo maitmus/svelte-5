@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import { counter } from '../store/store';
 
 	export let data: string;
